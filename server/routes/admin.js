@@ -186,14 +186,14 @@ router.get('/edit-post/:id', authMiddleware, async (req, res) => {
 */
 router.put('/edit-post/:id', authMiddleware, async (req, res) => {
   try {
-
+    console.log("reached here")
     await Post.findByIdAndUpdate(req.params.id, {
       title: req.body.title,
       body: req.body.body,
       updatedAt: Date.now()
     });
 
-    res.redirect(`/edit-post/${req.params.id}`);
+    res.redirect(`/dashboard`);
 
   } catch (error) {
     console.log(error);
