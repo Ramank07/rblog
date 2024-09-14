@@ -13,16 +13,19 @@
       </li>
       <li>
         <a
-          href="/contact"
-          class="<%= isActiveRoute('/contact', currentRoute) %>"
-          >Contact</a
+          href="/dashboard"
+          class="<%= isActiveRoute('/dashboard', currentRoute) %>"
+          >Dashboard</a
         >
       </li>
+      <% if(!isLoggedIn) { %>
       <li>
         <a href="/admin" class="<%= isActiveRoute('/signup', currentRoute) %>"
           >SignUp</a
         >
       </li>
+
+      <%}%>
     </ul>
   </nav>
 
