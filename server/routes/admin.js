@@ -188,12 +188,12 @@ router.post("/register", async (req, res) => {
   try {
     // console.log(req.body)
     const { username, password } = req.body;
-    console.log(username);
+    // console.log(username);
     const hashedPassword = await bcrypt.hash(password, 10);
-    console.log(hashedPassword);
+    // console.log(hashedPassword);
 
     try {
-      console.log(username);
+      // console.log(username);
 
       const user = await User.create({
         username: username,

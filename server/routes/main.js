@@ -6,19 +6,19 @@ const jwtSecret = process.env.JWT_SECRET;
 
 const authMiddleware = (req, res, next) => {
   const token = req.cookies.token;
-  console.log("Middle ware is being listened 1");
+  // console.log("Middle ware is being listened 1");
 
   if (!token) {
     next();
     return;
   }
-  console.log("Middle ware is being listened 2");
-  console.log(token);
+  // console.log("Middle ware is being listened 2");
+  // console.log(token);
   try {
     const decoded = jwt.verify(token, jwtSecret);
-    console.log("Middle ware is being listened 3");
+    // console.log("Middle ware is being listened 3");
 
-    console.log(decoded.userId);
+    // console.log(decoded.userId);
     req.userId = decoded.userId;
     next();
   } catch (error) {
